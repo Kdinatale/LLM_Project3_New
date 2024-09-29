@@ -45,10 +45,13 @@ def predict():
 
 def sentence(start_word, max_length):
     current_word = start_word
-    sentence = [current_word]
+    current_word_capital = current_word[0].upper() + current_word[1:]
+    sentence = [current_word_capital]
 
     #Loops a number of times decided by max_length
-    for _ in range(max_length - 1):
+    loop = True
+    while loop:
+    # for _ in range(max_length - 1):
         if current_word not in model_bigram_news.index:
             break  # Stop if the current word is not in the table
 
@@ -65,15 +68,17 @@ def sentence(start_word, max_length):
         next_word = np.random.choice(next_word_probs.index, p=next_word_probs.values)
 
         # Adds new word to end of sentence
-        sentence.append(next_word)
-        current_word = next_word  # Move to the next word
 
         # Set '.' as a sentence terminator
         if next_word == '.':
           # Breaks if a '.' is the next probable token
+          loop = False
           break
+        
+        sentence.append(next_word)
+        current_word = next_word  # Move to the next word
 
-    return render_template('bigram_result.html', sentence=' '.join(sentence))
+    return render_template('bigram_result.html', sentence=' '.join(sentence) + '.')
     
 @app.route('/generate_sentence', methods=['POST'])
 def generate_sentence():

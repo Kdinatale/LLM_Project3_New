@@ -20,6 +20,19 @@
       body {
         background-color: #ffe5ec;
       }
+
+      p {
+        font-family: "DM Serif Display", serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 4em;
+        text-align: center;
+      }
+
+      .sentence_container {
+        background-color: #dde5b6;
+        border: 40px solid #adc178;
+      }
     </style>
   </head>
   <body>
@@ -27,7 +40,10 @@
       <h1>Assignment 3 - Kayleigh DiNatale and Victoria Wiegand</h1>
     </header>
 
-    <p>{{sentence}}</p>
+    <div class="sentence_container">
+      <p>{{sentence}}</p>
+    </div>
+
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
