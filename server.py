@@ -43,8 +43,8 @@ def predict():
     # return str(compound)
 
 
-def sentence(start_word, max_length):
-    current_word = start_word
+def sentence(start_word):
+    current_word = start_word.lower()
     current_word_capital = current_word[0].upper() + current_word[1:]
     sentence = [current_word_capital]
 
@@ -78,7 +78,7 @@ def sentence(start_word, max_length):
         sentence.append(next_word)
         current_word = next_word  # Move to the next word
 
-    return render_template('bigram_result.html', sentence=' '.join(sentence) + '.')
+    return render_template('bigram_result.html', sentence=' '.join(sentence) + '.', start_word = current_word_capital)
     
 @app.route('/generate_sentence', methods=['POST'])
 def generate_sentence():
@@ -90,7 +90,7 @@ def generate_sentence():
     #     return jsonify(error="The 'features' key is missing from the request payload.")
     data = request.form['start_word']
 
-    return sentence(data, 20)
+    return sentence(data)
 
 if __name__ == '__main__':
     app.run(debug=True)
