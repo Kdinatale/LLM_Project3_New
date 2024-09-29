@@ -38,6 +38,9 @@
         margin-right: auto;
         text-align: center;
       }
+      .col-xl-6 {
+        width: 100%;
+      }
     </style>
   </head>
   <body>
@@ -102,19 +105,40 @@
       </ol>
     </nav> -->
     <div class="card-list">
-      <div class="card" style="width: 18rem">
-        <img
-          class="card-img-top"
-          src="{{ url_for('static', filename='images/sentiment_thumbnail.png') }}"
-          alt="Sentiment Analyzer Project Thumbnail"
-        />
-        <div class="card-body">
-          <h5 class="card-title">Sentiment Analyzer</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="/sentiment" class="btn btn-primary">Test Model</a>
+      <div class="row">
+        <div class="col-xl-6 mb-4 mt-4">
+          <div class="card w-50" style="width: 18rem">
+            <img
+              class="card-img-top"
+              src="{{ url_for('static', filename='images/sentiment_thumbnail.png') }}"
+              alt="Sentiment Analyzer Project Thumbnail"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Sentiment Analyzer</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="/sentiment" class="btn btn-primary">Test Model</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 mb-4 mt-4">
+          <div class="card w-50" style="width: 18rem">
+            <img
+              class="card-img-top"
+              src="{{ url_for('static', filename='images/sentiment_thumbnail.png') }}"
+              alt="Sentiment Analyzer Project Thumbnail"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Sentiment Analyzer</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="/sentiment" class="btn btn-primary">Test Model</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
