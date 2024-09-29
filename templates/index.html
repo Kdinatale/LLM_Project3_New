@@ -29,7 +29,6 @@
         filter: invert(1);
       }
       .card-list {
-        margin-top: 10%;
         /* text-align: center; */
         display: flex;
       }
@@ -40,6 +39,10 @@
       }
       .col-xl-6 {
         width: 100%;
+      }
+      .path {
+        margin-top: 56px;
+        background-color: lightblue;
       }
     </style>
   </head>
@@ -99,11 +102,12 @@
       </div>
     </nav>
 
-    <!-- <nav aria-label="breadcrumb">
+    <nav aria-label="breadcrumb" class="path">
       <ol class="breadcrumb">
         <li class="breadcrumb-item active" aria-current="page">Homepage</li>
       </ol>
-    </nav> -->
+    </nav>
+
     <div class="card-list">
       <div class="row">
         <div class="col-xl-6 mb-4 mt-4">
@@ -143,7 +147,6 @@
       </div>
     </div>
 
-    <a href="/sentiment">Sentiment Model</a>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
